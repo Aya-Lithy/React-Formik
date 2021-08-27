@@ -9,7 +9,7 @@ function Select(props) {
   return (
     <Container className="form-group">
       <Row>
-        <Col xs={2}>
+        <Col xs={2} className="d-flex justify-content-between">
           <label htmlFor={name}>{label}</label>
         </Col>
         <Col xs={5}>
