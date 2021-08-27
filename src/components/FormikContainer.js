@@ -7,9 +7,11 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 function FormikContainer() {
   const initialValues = {
     email: "",
+    description: "",
   };
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email").required("Required"),
+    description: Yup.string().required("Required"),
   });
   const onSubmit = (values) => {
     console.log("onSubmit", values);
@@ -30,7 +32,15 @@ function FormikContainer() {
             </Row>
             <br />
             <Row>
-              <Col xs={11}>
+              <FormikControl
+                control="textarea"
+                label="Description"
+                name="description"
+              />
+            </Row>
+            <br />
+            <Row>
+              <Col xs={5}>
                 <Button type="submit">Submit</Button>
               </Col>
             </Row>

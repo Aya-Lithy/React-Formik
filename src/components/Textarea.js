@@ -3,7 +3,7 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import TextError from "./TextError";
 
-function Input(props) {
+function Textarea(props) {
   const { label, name, ...rest } = props;
 
   return (
@@ -13,7 +13,13 @@ function Input(props) {
           <label htmlFor={name}>{label}</label>
         </Col>
         <Col xs={5}>
-          <Field className="form-control" id={name} name={name} {...rest} />
+          <Field
+            as="textarea"
+            className="form-control"
+            id={name}
+            name={name}
+            {...rest}
+          />
         </Col>
       </Row>
 
@@ -27,4 +33,4 @@ function Input(props) {
   );
 }
 
-export default Input;
+export default Textarea;
